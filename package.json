@@ -1,0 +1,15 @@
+{
+  "name": "ridge-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Ridge system public sources",
+  "main": "index.js",
+   "workspaces": [
+    "components/*",
+    "core/*"
+  ],
+  "author": {
+
+  },
+  "license": "MIT"
+}
