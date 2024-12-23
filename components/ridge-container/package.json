@@ -1,0 +1,23 @@
+{
+  "name": "ridge-container",
+  "version": "1.2.0",
+  "description": "Ridge系统组件，提供基础的页面布局、自适应等方面功能",
+  "main": "index.js",
+  "icon": "icons/free.svg",
+  "scripts": {
+    "build": "ridge",
+    "watch": "ridge -w -s -c",
+    "help": "ridge --help",
+    "bs": "ridge -s"
+  },
+  "files": [
+    "build",
+    "icons"
+  ],
+  "author": {
+    "name": "Ridge System"
+  },
+  "license": "MIT",
+  "dependencies": {},
+  "ridgeDist": "build/ridge.dist.js"
+}

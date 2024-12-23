@@ -1,0 +1,25 @@
+{
+  "name": "ridge-highcharts",
+  "version": "1.2.0",
+  "icon": "icons/highchart.svg",
+  "description": "Highchart图表",
+  "main": "index.js",
+  "scripts": {
+    "build": "ridge",
+    "watch": "ridge -s -w",
+    "help": "ridge --help"
+  },
+  "files": [
+    "build",
+    "icons"
+  ],
+  "externals": [
+    "/highcharts/highcharts.js"
+  ],
+  "author": "",
+  "license": "ISC",
+  "ridgeDist": "build/ridge.dist.js",
+  "devDependencies": {
+    "ridge-build": "^1.1.0"
+  }
+}

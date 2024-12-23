@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkridge_material=globalThis.webpackChunkridge_material||[]).push([[185],{185:(e,a,n)=>{n.r(a),n.d(a,{default:()=>s});var t=n(677),r=n.n(t),l=n(643);const s=({value:e,onChange:a})=>{const n=(0,l.Ou)(e);return r().createElement(l.sk,{value:n,onChange:e=>{"string"==typeof e?a&&a(e):a&&a("#"+e.hex)}})}}}]);
