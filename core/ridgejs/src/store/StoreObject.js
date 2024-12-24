@@ -32,7 +32,7 @@ export default class ValtioStoreObject {
     }
 
     // 计算字段的依赖信息
-    this.computedDependencies = {}
+    // this.computedDependencies = {}
     this.state = {}
 
     // 增加全局机制， 可以在store中通过 this.xxx 来设置和获取全局服务/变量， 但是这个变量不会绑定到数据，也不会变化后驱动组件改变
@@ -199,8 +199,8 @@ export default class ValtioStoreObject {
               this.addWatchers(expr, callback)
             }
           } else {
-            // 未声明依赖则更新所以涉及
-            this.addWatchers(name, callback)
+            // 未声明依赖则更新所有涉及
+            this.addWatchers('*', callback)
           }
         }
         break
@@ -243,12 +243,12 @@ export default class ValtioStoreObject {
           } else if (typeof computed.get === 'function') {
             result = computed.get.call(this.context, ...args)
           }
-          // 获取计算过程中依赖的状态列表
-          if (this.computedDependencies[name]) {
-            this.computedDependencies[name] = Array.from(new Set([...this.computedDependencies[name], ...this.computedUsedState]))
-          } else {
-            this.computedDependencies[name] = this.computedUsedState
-          }
+          // 获取计算过程中依赖的状态列表 不进行computedDependencies计算，因为函数可能有if else等，监听可能并不准确，还是统一未提供按*全部计算处理了
+          // if (this.computedDependencies[name]) {
+          //   this.computedDependencies[name] = Array.from(new Set([...this.computedDependencies[name], ...this.computedUsedState]))
+          // } else {
+          //   this.computedDependencies[name] = this.computedUsedState
+          // }
         } catch (e) {
           console.error('getValue Error', e)
           if (this.storeSetUp) {
@@ -347,14 +347,17 @@ export default class ValtioStoreObject {
       if (this.watchers[increasedPath]) {
         watchers.push(...this.watchers[increasedPath])
       }
-      // 判断计算字段对state的依赖
-      for (const computedName in this.computedDependencies) {
-        if (this.computedDependencies[computedName].indexOf(increasedPath) > -1) {
-          // 计算字段依赖state， 计算字段值也要变化， 对应连接方也要通知
-          watchers.push(...(this.watchers[computedName] ?? []))
-        }
-      }
+      // 判断计算字段对state的依赖 computedDependencies不计算
+      // for (const computedName in this.computedDependencies) {
+      //   if (this.computedDependencies[computedName].indexOf(increasedPath) > -1) {
+      //     // 计算字段依赖state， 计算字段值也要变化， 对应连接方也要通知
+      //     watchers.push(...(this.watchers[computedName] ?? []))
+      //   }
+      // }
 
+      if (this.watchers['*']) {
+        watchers.push(...this.watchers['*'])
+      }
       // watch 函数调用
       if (this.module.watch && this.module.watch[increasedPath]) {
         const watcher = this.module.watch[increasedPath]

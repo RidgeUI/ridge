@@ -10,6 +10,7 @@
   "main": "index.js",
   "scripts": {
     "build": "ridge",
+    "postbuild": "npm version patch && npm publish",
     "watch": "ridge -w -s",
     "help": "ridge --help",
     "pd": "npm publish --tag dev"

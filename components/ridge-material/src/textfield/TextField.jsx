@@ -14,9 +14,8 @@ export default ({
   onChange
 }) => {
   const handleChange = (event) => {
-    input && input(event.target.value);
-    onChange && onChange(event.target.value);
-  };
-
-  return  <TextField size={size} readonly={readonly} type={type} required={required} error={error} value={value} label={label} variant={variant} onChange={handleChange}/>
+    input && input(event.target.value)
+    onChange && onChange(event.target.value)
+  }
+  return <TextField size={size} readonly={readonly} type={type} required={required} error={error} value={value} label={label} variant={variant} onChange={handleChange} />
 }
