@@ -1,6 +1,6 @@
 import Avatar from './Avatar.jsx'
 import { color, icon, size } from '../props.js'
-import { value, radiogroup, onChange, boolean, select, image, string } from 'ridge-build/src/props.js'
+import { value, radiogroup, boolean, select, image, string, onClick } from 'ridge-build/src/props.js'
 export default {
   name: 'avatar',
   title: '头像',
@@ -25,7 +25,7 @@ export default {
     boolean('bottomPlus', '加号', false)
   ],
   events: [
-    onChange
+    onClick
   ],
   width: 300,
   height: 40

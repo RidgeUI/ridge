@@ -1,0 +1,213 @@
+{
+  "version": "1.2.0",
+  "style": {
+    "width": 1920,
+    "height": 1080,
+    "background": "",
+    "classNames": []
+  },
+  "properties": {},
+  "cssFiles": [],
+  "jsFiles": [],
+  "elements": [
+    {
+      "title": "弹性容器",
+      "path": "ridge-container/flex",
+      "id": "ctifjygcng",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 515,
+        "y": 58,
+        "width": 354,
+        "height": 176
+      },
+      "styleEx": {},
+      "props": {
+        "direction": "row",
+        "justify": "flex-start",
+        "alignItems": "flex-start",
+        "flexWrap": false,
+        "fill": false,
+        "children": [
+          "og5fcwxqdk",
+          "8lnlhavamu",
+          "xhwyj0x6g7"
+        ],
+        "gap": 8,
+        "padding": 8,
+        "classList": []
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "占位块",
+      "path": "ridge-bootstrap/placeholder",
+      "id": "og5fcwxqdk",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 88,
+        "height": 89
+      },
+      "styleEx": {},
+      "props": {
+        "type": "primary",
+        "animation": ""
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "占位块_1",
+      "path": "ridge-bootstrap/placeholder",
+      "id": "8lnlhavamu",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 74,
+        "height": 115
+      },
+      "styleEx": {},
+      "props": {
+        "type": "primary",
+        "animation": ""
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "占位块_2",
+      "path": "ridge-bootstrap/placeholder",
+      "id": "xhwyj0x6g7",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": -33,
+        "y": 0,
+        "width": 84,
+        "height": 80
+      },
+      "styleEx": {},
+      "props": {
+        "type": "primary",
+        "animation": ""
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "列表容器",
+      "path": "ridge-container/list",
+      "id": "rykv6obuzk",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 62,
+        "y": 324,
+        "width": 510,
+        "height": 424
+      },
+      "styleEx": {},
+      "props": {
+        "dataSource": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "selected": [],
+        "children": [
+          "4djd1mo988"
+        ],
+        "gap": 4,
+        "padding": 4,
+        "layout": "grid",
+        "fixedHeight": true,
+        "fixedWidth": true,
+        "fixed": true,
+        "columns": 3,
+        "rows": 3,
+        "classNames": [],
+        "itemClassNames": [],
+        "selectedClassNames": []
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "弹性容器_1",
+      "path": "ridge-container/flex",
+      "id": "4djd1mo988",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 937,
+        "y": 277,
+        "width": 256,
+        "height": 80
+      },
+      "styleEx": {},
+      "props": {
+        "direction": "row",
+        "justify": "flex-start",
+        "alignItems": "flex-start",
+        "flexWrap": false,
+        "fill": false,
+        "children": [],
+        "gap": 8,
+        "padding": 8,
+        "classList": [
+          "ridge-bootstrap/bg-primary-subtle"
+        ]
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    }
+  ],
+  "name": "he",
+  "children": [
+    "ctifjygcng",
+    "rykv6obuzk"
+  ]
+}

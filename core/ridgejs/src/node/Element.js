@@ -140,13 +140,17 @@ class Element extends BaseNode {
     }
 
     if (this.componentDefinition) {
-      this.updateConnectedProperties()
-      await this.preparePropsBeforeRender()
-      this.createRenderer()
-      this.mounted()
-      debug('mounted', this.config.id, this)
-      this.el.setAttribute('ridge-mount', 'mounted')
-      this.removeStatus()
+      try {
+        this.updateConnectedProperties()
+        await this.preparePropsBeforeRender()
+        this.createRenderer()
+        this.mounted && this.mounted()
+        debug('mounted', this.config.id, this)
+        this.el.setAttribute('ridge-mount', 'mounted')
+        this.removeStatus()
+      } catch (e) {
+        console.error('ridge element mount error:', e)
+      }
     }
   }
 
@@ -298,7 +302,7 @@ class Element extends BaseNode {
     if (props) {
       Object.assign(this.properties, props)
     }
-    if (this.renderer) {
+    if (this.renderer && this.el && this.el.getAttribute('ridge-mount') === 'mounted') {
       this.preparePropsBeforeRender().finally(() => {
         this.renderUpdate()
       })
@@ -353,6 +357,8 @@ class Element extends BaseNode {
         this.parent.updateChildStyle(this)
       }
       this.invoke('onStyleUpdated', [this])
+
+      this.styleUpdated && this.styleUpdated()
     }
   }
 
@@ -374,6 +380,26 @@ class Element extends BaseNode {
   }
 
   /**
+   * 获取传给组件的插槽类型属性值， 主要对react进行一步转化以便react组件使用
+   * @param {*} node
+   * @returns
+   */
+  getSlotPropValue (node) {
+    if (node) {
+      // await slotNode.initialize(true)
+      node.parent = this
+      node.isSlot = true
+      if (this.componentDefinition.type === 'react') {
+        return createReactElement(node)
+      } else {
+        return node
+      }
+    } else {
+      return null
+    }
+  }
+
+  /**
    * 渲染前重新调整组件属性取值。 主要用于以下属性类型
    * 1. image|file: 获取图片实际加载地址(浏览器端加载二进制流、运行端加载实际运行地址)
    * 2. slot： 转换查找目标组件实例、并加载
@@ -381,28 +407,33 @@ class Element extends BaseNode {
    * 4. classList： 加载类样式所在组件包里面的样式文件
    */
   async preparePropsBeforeRender () {
-    for (const prop of this.componentDefinition.props || []) {
+    if (!this.componentDefinition) return
+    let slotOrder = 0
+    for (let i = 0; i < (this.componentDefinition.props || []).length; i++) {
+      const prop = this.componentDefinition.props[i]
       if (prop.type === 'image' || prop.type === 'file') {
         // 图片或转化 config + properties
         const configValue = this.config.props[prop.name] || this.properties[prop.name]
         if (configValue != null && configValue !== '') {
           this.properties[prop.name] = await this.composite.getBlobUrl(configValue, this.composite.packageName)
         }
-      } else if (prop.type === 'slot') {
-        // 插槽只处理config
+      } else if (prop.type === 'slot') { // 处理插槽类型属性最终值
+        delete this.properties[prop.name]
+        // 算法如下：1、获取设置到属性上的值（LTS） 2、遍历子节点，获取命名和slot一致的节点 3、如无子节点按定义次序赋值
         const configValue = this.config.props[prop.name]
-        if (configValue) {
+        if (configValue) { // LTS 直接将模板设置到属性上面
           const slotNode = this.composite.getNode(configValue)
-          if (slotNode) {
-            // await slotNode.initialize(true)
-            slotNode.parent = this
-            if (this.componentDefinition.type === 'react') {
-              this.properties[prop.name] = createReactElement(slotNode)
-            } else {
-              this.properties[prop.name] = slotNode
+          this.properties[prop.name] = this.getSlotPropValue(slotNode)
+        } else if (Array.isArray(this.children)) {
+          for (const childNode of this.children) { // 遍历子节点，获取命名和slot一致的节点
+            if (childNode.config.title === prop.name) {
+              this.properties[prop.name] = this.getSlotPropValue(childNode)
             }
-          } else {
-            this.config.props[prop.name] = null
+          }
+          if (this.properties[prop.name] == null) { // 最后：按定义次序赋值
+            const slotNode = this.children[slotOrder]
+            this.properties[prop.name] = this.getSlotPropValue(slotNode)
+            slotOrder++
           }
         }
       } else if (prop.type === 'decorate') {

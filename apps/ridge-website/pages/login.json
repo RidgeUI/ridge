@@ -1,0 +1,704 @@
+{
+  "version": "1.2.0",
+  "style": {
+    "width": 1920,
+    "height": 1080,
+    "background": "",
+    "classNames": []
+  },
+  "properties": {},
+  "cssFiles": [],
+  "jsFiles": [
+    "/ridge-common/js/login.js",
+    "composite:///js/browser.js"
+  ],
+  "elements": [
+    {
+      "title": "弹性容器",
+      "path": "ridge-container/flex",
+      "id": "cdox8q2s4m",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 551,
+        "y": 285,
+        "width": 359,
+        "height": 240
+      },
+      "styleEx": {},
+      "props": {
+        "direction": "column",
+        "justify": "flex-start",
+        "alignItems": "center",
+        "flexWrap": false,
+        "fill": false,
+        "children": [
+          "z8p42a53yi",
+          "fpoy5g1obh",
+          "4k6sxb1k4o"
+        ],
+        "gap": 8,
+        "padding": 0,
+        "classList": []
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": true,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "弹性容器_1",
+      "path": "ridge-container/flex",
+      "id": "fpoy5g1obh",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 897
+      },
+      "styleEx": {},
+      "props": {
+        "direction": "row",
+        "justify": "center",
+        "alignItems": "center",
+        "flexWrap": false,
+        "fill": false,
+        "children": [
+          "sb6vs6grwc"
+        ],
+        "gap": 8,
+        "padding": 8,
+        "classList": []
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "Header",
+      "path": "ridge-container/composite",
+      "id": "z8p42a53yi",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": -35182,
+        "y": 0,
+        "width": 1440,
+        "height": 60
+      },
+      "styleEx": {},
+      "props": {
+        "pagePath": "/components/Header",
+        "classList": []
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "Footer",
+      "path": "ridge-container/composite",
+      "id": "4k6sxb1k4o",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": -6524,
+        "width": 1440,
+        "height": 91
+      },
+      "styleEx": {},
+      "props": {
+        "pagePath": "/components/Footer",
+        "classList": []
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "弹性容器_2",
+      "path": "ridge-container/flex",
+      "id": "sb6vs6grwc",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 2235,
+        "width": 489,
+        "height": 508
+      },
+      "styleEx": {},
+      "props": {
+        "direction": "column",
+        "justify": "center",
+        "alignItems": "center",
+        "flexWrap": false,
+        "fill": false,
+        "children": [
+          "uqh2fyfmbq",
+          "uqq4be5hg0",
+          "2fpaftzfzi",
+          "ogt40bklxz"
+        ],
+        "gap": 8,
+        "padding": 8,
+        "classList": [
+          "ridge-bootstrap/border",
+          "ridge-bootstrap/border-1",
+          "ridge-bootstrap/border-primary-emphasis",
+          "ridge-bootstrap/rounded-3",
+          "ridge-bootstrap/p-2",
+          "ridge-bootstrap/shadow-sm"
+        ]
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "文本",
+      "path": "ridge-bootstrap/typography",
+      "id": "zmekch6zoi",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": -5,
+        "width": 150,
+        "height": 74
+      },
+      "styleEx": {},
+      "props": {
+        "classList": [
+          "ridge-bootstrap/p-3",
+          "ridge-bootstrap/fs-3",
+          "ridge-bootstrap/fw-medium"
+        ],
+        "text": "请登录"
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "单行输入",
+      "path": "ridge-bootstrap/input",
+      "id": "1pgdmvp3m3",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 12,
+        "width": 368,
+        "height": 52
+      },
+      "styleEx": {},
+      "props": {
+        "value": "",
+        "validState": "",
+        "disabled": false,
+        "size": "form-control-normal",
+        "type": "text",
+        "classList": [],
+        "label": "请输入手机号"
+      },
+      "propEx": {
+        "value": "UserLogin.state.id"
+      },
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "单行输入_1",
+      "path": "ridge-bootstrap/input",
+      "id": "ocy3z5fdhk",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 6,
+        "width": 368,
+        "height": 47
+      },
+      "styleEx": {},
+      "props": {
+        "value": "",
+        "label": "请输入密码",
+        "validState": "",
+        "disabled": false,
+        "size": "normal",
+        "type": "password",
+        "classList": []
+      },
+      "propEx": {
+        "value": "UserLogin.state.password"
+      },
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "弹性容器_4",
+      "path": "ridge-container/flex",
+      "id": "uqq4be5hg0",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": -542,
+        "width": 388,
+        "height": 288
+      },
+      "styleEx": {},
+      "props": {
+        "direction": "column",
+        "justify": "center",
+        "alignItems": "flex-start",
+        "flexWrap": false,
+        "fill": false,
+        "children": [
+          "vmgqbx63b9",
+          "1pgdmvp3m3",
+          "a82xlmlz9x",
+          "ocy3z5fdhk",
+          "vra8b2khdr",
+          "nxc83tyjcv"
+        ],
+        "gap": 0,
+        "padding": 8,
+        "classList": []
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "按钮",
+      "path": "ridge-bootstrap/button",
+      "id": "2fpaftzfzi",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 234,
+        "width": 373,
+        "height": 45
+      },
+      "styleEx": {},
+      "props": {
+        "type": "primary",
+        "src": "",
+        "icon": "person",
+        "size": "lg",
+        "style": "general",
+        "rounded": false,
+        "full": true,
+        "disabled": false,
+        "withBadge": false,
+        "badgeCount": "",
+        "text": "登录"
+      },
+      "propEx": {
+        "disabled": "RegisterModal.state.requesting"
+      },
+      "events": {
+        "onClick": [
+          {
+            "store": "UserLogin",
+            "method": "loginUser",
+            "payload": ""
+          }
+        ]
+      },
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "文本_2",
+      "path": "ridge-bootstrap/typography",
+      "id": "vmgqbx63b9",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 64,
+        "width": 164,
+        "height": 32
+      },
+      "styleEx": {},
+      "props": {
+        "classList": [],
+        "text": "请输入手机号码"
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "文本_3",
+      "path": "ridge-bootstrap/typography",
+      "id": "a82xlmlz9x",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 27,
+        "width": 99,
+        "height": 33
+      },
+      "styleEx": {},
+      "props": {
+        "text": "请输入密码",
+        "classList": []
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "弹性容器_5",
+      "path": "ridge-container/flex",
+      "id": "vra8b2khdr",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": -48,
+        "y": 0,
+        "width": 360,
+        "height": 70
+      },
+      "styleEx": {},
+      "props": {
+        "direction": "row",
+        "justify": "flex-start",
+        "alignItems": "flex-start",
+        "flexWrap": false,
+        "fill": false,
+        "children": [
+          "kcyhmqmhf7",
+          "cjyqwrnr4n"
+        ],
+        "gap": 8,
+        "padding": 0,
+        "classList": []
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "单行输入_2",
+      "path": "ridge-bootstrap/input",
+      "id": "k5p44xidd3",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 551,
+        "y": 1164,
+        "width": 177.9999676872702,
+        "height": 38
+      },
+      "styleEx": {},
+      "props": {
+        "value": "",
+        "validState": "",
+        "disabled": false,
+        "size": "form-control-normal",
+        "type": "text",
+        "classList": []
+      },
+      "propEx": {
+        "value": "UserLogin.state.captcha",
+        "placeholder": null
+      },
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "图片_1",
+      "path": "ridge-bootstrap/image",
+      "id": "cjyqwrnr4n",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 141,
+        "height": 68
+      },
+      "styleEx": {},
+      "props": {
+        "src": "",
+        "classList": []
+      },
+      "propEx": {
+        "src": "UserLogin.state.captchaUrl"
+      },
+      "events": {
+        "onClick": [
+          {
+            "store": "UserLogin",
+            "method": "reloadCaptcha",
+            "payload": ""
+          }
+        ]
+      },
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "弹性容器_6",
+      "path": "ridge-container/flex",
+      "id": "kcyhmqmhf7",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 186,
+        "height": 66
+      },
+      "styleEx": {},
+      "props": {
+        "direction": "column",
+        "justify": "flex-start",
+        "alignItems": "flex-start",
+        "flexWrap": false,
+        "fill": false,
+        "children": [
+          "7r7itqx0a2",
+          "k5p44xidd3"
+        ],
+        "gap": 8,
+        "padding": 0,
+        "classList": []
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "文本_1",
+      "path": "ridge-bootstrap/typography",
+      "id": "7r7itqx0a2",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 99,
+        "height": 24
+      },
+      "styleEx": {},
+      "props": {
+        "text": "输入验证码",
+        "classList": []
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "弹性容器_7",
+      "path": "ridge-container/flex",
+      "id": "uqh2fyfmbq",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": -140,
+        "width": 359,
+        "height": 56
+      },
+      "styleEx": {},
+      "props": {
+        "direction": "row",
+        "justify": "flex-start",
+        "alignItems": "center",
+        "flexWrap": false,
+        "fill": false,
+        "children": [
+          "fvdblqvb72",
+          "zmekch6zoi"
+        ],
+        "gap": 8,
+        "padding": 8,
+        "classList": []
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "矩形",
+      "path": "ridge-bootstrap/div",
+      "id": "fvdblqvb72",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 55,
+        "height": 58
+      },
+      "styleEx": {},
+      "props": {
+        "mask": "composite:///image/CbiRoomsattic.svg",
+        "classList": [
+          "ridge-bootstrap/bg-primary"
+        ]
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "文本_4",
+      "path": "ridge-bootstrap/typography",
+      "id": "nxc83tyjcv",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 359,
+        "height": 26
+      },
+      "styleEx": {},
+      "props": {
+        "classList": [
+          "ridge-bootstrap/text-danger"
+        ]
+      },
+      "propEx": {
+        "text": "UserLogin.state.resultMessage"
+      },
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "超链接",
+      "path": "ridge-bootstrap/link",
+      "id": "ogt40bklxz",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": -100,
+        "y": 0,
+        "width": 106,
+        "height": 41
+      },
+      "styleEx": {},
+      "props": {
+        "classList": [
+          "ridge-bootstrap/pt-3"
+        ],
+        "text": "账号注册",
+        "icon": "person-plus-fill",
+        "href": "#/pages/register"
+      },
+      "propEx": {},
+      "events": {
+        "onClick": []
+      },
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    }
+  ],
+  "name": "login",
+  "children": [
+    "cdox8q2s4m"
+  ],
+  "events": {
+    "login": [],
+    "success": [
+      {
+        "store": "Browser",
+        "method": "openLink",
+        "payload": "#/index"
+      }
+    ]
+  }
+}

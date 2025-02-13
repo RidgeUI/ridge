@@ -35,13 +35,21 @@ function start () {
   })
 
   if (appPkgName) {
+    document.getElementById('app').setAttribute('composite-hash', pagePath)
     const composite = window.ridge.createComposite(appPkgName, pagePath, {})
-    composite.mount(document.getElementById('app'))
+    composite.mount(document.getElementById('app'), true)
   }
 
   window.addEventListener('hashchange', () => {
-    const composite = window.ridge.createComposite(appPkgName, window.location.hash.substring(2) || 'index', {})
-    composite.mount(document.getElementById('app'))
+    const hashPath = window.location.hash.substring(2) || 'index'
+
+    if (document.getElementById('app').getAttribute('composite-hash') === hashPath) {
+      return
+    }
+    document.getElementById('app').setAttribute('composite-hash', hashPath)
+
+    const composite = window.ridge.createComposite(appPkgName, hashPath, {})
+    composite.mount(document.getElementById('app'), true)
   })
 }
 

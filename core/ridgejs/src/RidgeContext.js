@@ -127,7 +127,7 @@ class RidgeContext {
    * @returns
    */
   async getBlobUrl (url, packageName) {
-    if (url.startsWith('http') || url.startsWith('data:') || url.startsWith('/')) {
+    if (url.startsWith('http') || url.startsWith('data:') || url.startsWith('blob:') || url.startsWith('/')) {
       return url
     } else if (url.startsWith('composite://')) {
       if (packageName) {

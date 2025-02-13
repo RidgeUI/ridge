@@ -137,6 +137,19 @@ const btnTheme = radiogroup('theme', '主题', [{
   value: 'outline'
 }])
 
+const tagTheme = radiogroup('type', '样式类型', [
+  {
+    label: '默认',
+    value: 'light'
+  }, {
+    label: '浅色',
+    value: 'ghost'
+  }, {
+    label: '深色',
+    value: 'solid'
+  }
+])
+
 const icon = {
   name: 'icon',
   label: '图标',
@@ -158,6 +171,7 @@ const color = {
       value: v.trim()
     }
   }),
+  connect: true,
   value: 'blue'
 }
 
@@ -193,6 +207,7 @@ export {
   btnTheme,
   direction,
   colorStage,
+  tagTheme,
   validateStatus,
   type
 }

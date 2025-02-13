@@ -13,6 +13,8 @@ export default {
     value(),
     number('max', '最大', 5),
     size,
+    boolean('disabled', '禁用', false),
+    boolean('readOnly', '只读', false),
     boolean('half', '0.5分', false)
   ],
   events: [onChange]

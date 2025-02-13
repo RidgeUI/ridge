@@ -1,0 +1,360 @@
+{
+  "version": "1.2.0",
+  "style": {
+    "width": 1320,
+    "height": 640,
+    "background": "",
+    "classNames": []
+  },
+  "properties": {
+    "type": "app"
+  },
+  "cssFiles": [],
+  "jsFiles": [
+    "composite:///js/repo-components.js"
+  ],
+  "elements": [
+    {
+      "title": "弹性容器",
+      "path": "ridge-container/flex",
+      "id": "8zoyq1nzor",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 293,
+        "y": 60,
+        "width": 359,
+        "height": 240
+      },
+      "styleEx": {},
+      "props": {
+        "direction": "row",
+        "justify": "flex-start",
+        "alignItems": "flex-start",
+        "flexWrap": false,
+        "fill": false,
+        "children": [
+          "7rw84lwloi"
+        ],
+        "gap": 8,
+        "padding": 8,
+        "classList": []
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": true,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "列表容器",
+      "path": "ridge-container/list",
+      "id": "7rw84lwloi",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 1300,
+        "height": 625
+      },
+      "styleEx": {},
+      "props": {
+        "dataSource": [],
+        "selected": [],
+        "gap": 4,
+        "padding": 4,
+        "layout": "flex",
+        "fixedHeight": true,
+        "fixed": true,
+        "columns": 2,
+        "rows": 5,
+        "classNames": [],
+        "itemClassNames": [],
+        "selectedClassNames": [],
+        "template": "1ug64oo053"
+      },
+      "propEx": {
+        "dataSource": "RepoComponents.state.packageList"
+      },
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": [
+        "1ug64oo053"
+      ]
+    },
+    {
+      "title": "应用容器_模板",
+      "path": "ridge-container/flex",
+      "id": "1ug64oo053",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 473,
+        "height": 386
+      },
+      "styleEx": {},
+      "props": {
+        "direction": "column",
+        "justify": "flex-start",
+        "alignItems": "stretch",
+        "flexWrap": false,
+        "fill": false,
+        "children": [
+          "eslznkz1db",
+          "pzy1wwpct3"
+        ],
+        "gap": 8,
+        "padding": 0,
+        "classList": [
+          "ridge-bootstrap/shadow-sm",
+          "ridge-bootstrap/rounded-3"
+        ]
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": [],
+      "slot": true
+    },
+    {
+      "title": "图片",
+      "path": "ridge-bootstrap/image",
+      "id": "eslznkz1db",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 456,
+        "height": 270
+      },
+      "styleEx": {},
+      "props": {
+        "src": "",
+        "classList": [
+          "ridge-bootstrap/rounded-3"
+        ],
+        "objectFit": "object-fit-cover"
+      },
+      "propEx": {
+        "src": "RepoComponents.computed.itemPackageCover"
+      },
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "文本",
+      "path": "ridge-bootstrap/typography",
+      "id": "jeh4j6pgwz",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 206,
+        "height": 21.00000186842315,
+        "flex": "1"
+      },
+      "styleEx": {},
+      "props": {
+        "text": "文本",
+        "classList": [
+          "ridge-bootstrap/text-black"
+        ]
+      },
+      "propEx": {
+        "text": "RepoComponents.computed.itemPackageName"
+      },
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "标签",
+      "path": "ridge-bootstrap/badge",
+      "id": "0qurs0q65g",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 87.99999003507654,
+        "y": 120.51562873684631,
+        "width": 55,
+        "height": 19.968741280691965
+      },
+      "styleEx": {},
+      "props": {
+        "type": "light",
+        "text": "3.1.19",
+        "pill": false,
+        "showClose": false,
+        "classList": []
+      },
+      "propEx": {
+        "text": "RepoComponents.computed.itemPackageVersion"
+      },
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "弹性容器",
+      "path": "ridge-container/flex",
+      "id": "icw6kqaizu",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 309,
+        "height": 31
+      },
+      "styleEx": {},
+      "props": {
+        "direction": "row",
+        "justify": "flex-start",
+        "alignItems": "center",
+        "flexWrap": false,
+        "fill": false,
+        "children": [
+          "jeh4j6pgwz",
+          "0qurs0q65g"
+        ],
+        "padding": 0,
+        "classList": [],
+        "gap": 0
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "文本_1",
+      "path": "ridge-bootstrap/typography",
+      "id": "0q7ez28zlv",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 43,
+        "width": 441,
+        "height": 27
+      },
+      "styleEx": {},
+      "props": {
+        "text": "文本",
+        "classList": [
+          "ridge-bootstrap/text-body-tertiary",
+          "ridge-bootstrap/fs-6",
+          "ridge-bootstrap/text-truncate"
+        ]
+      },
+      "propEx": {
+        "text": "RepoComponents.computed.itemPackageDesc"
+      },
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "弹性容器_2",
+      "path": "ridge-container/flex",
+      "id": "3ud9aa6hk5",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 309,
+        "height": 9
+      },
+      "styleEx": {},
+      "props": {
+        "direction": "row",
+        "justify": "flex-start",
+        "alignItems": "center",
+        "flexWrap": false,
+        "fill": false,
+        "children": [
+          "0q7ez28zlv"
+        ],
+        "gap": 8,
+        "padding": 0,
+        "classList": []
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "弹性容器_1",
+      "path": "ridge-container/flex",
+      "id": "pzy1wwpct3",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 467,
+        "height": 92
+      },
+      "styleEx": {},
+      "props": {
+        "direction": "column",
+        "justify": "flex-start",
+        "alignItems": "stretch",
+        "flexWrap": false,
+        "fill": false,
+        "children": [
+          "icw6kqaizu",
+          "3ud9aa6hk5"
+        ],
+        "gap": 3,
+        "padding": 10,
+        "classList": []
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    }
+  ],
+  "name": "RepoApps",
+  "children": [
+    "8zoyq1nzor"
+  ]
+}

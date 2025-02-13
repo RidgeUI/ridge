@@ -1,5 +1,5 @@
 import Button from './Button.jsx'
-import { boolean, radiogroup, string } from 'ridge-build/src/props.js'
+import { boolean, onClick, radiogroup, string } from 'ridge-build/src/props.js'
 import { btnColor, btnVariant, size, icon } from '../utils.js'
 
 export default {
@@ -17,5 +17,8 @@ export default {
     icon,
     size,
     boolean('disabled', '禁用', false, true)
+  ],
+  events: [
+    onClick
   ]
 }

@@ -27,13 +27,17 @@ export default class SwitchContainer extends BaseContainer {
       if (index != null) {
         currentIndex = index
       }
+      const lastStateElement = this.containerEl.querySelector('[toggle-on="1"]')
+
       for (let i = 0; i < childElements.length; i++) {
-        if (currentIndex === childElements[i].getAttribute('ridge-title')) {
+        if (currentIndex === childElements[i].getAttribute('ridge-title') || current === i) {
           childElements[i].style.display = ''
+          childElements[i].setAttribute('toggle-on', true)
           if (childElements[i].getAttribute('ridge-mount') !== 'mounted') {
             childElements[i].ridgeNode.mount(childElements[i])
           }
         } else {
+          childElements[i].removeAttribute('toggle-on')
           childElements[i].style.display = 'none'
         }
       }

@@ -179,16 +179,8 @@ export default class BaseContainer {
   }
 
   // 删除子节点
-  removeChild (node, keepPosition) {
-    if (keepPosition && false) {
-      const shadowNode = document.createElement('div')
-      shadowNode.classList.add('drop-shadow')
-      Object.assign(shadowNode.style, this.getChildStyle(node))
-
-      shadowNode.setAttribute('shadow-for', node.getId())
-      this.containerEl.replaceChild(shadowNode, node.el)
-      // this.el.appendChild(shadowNode)
-    } else if (node.el.parentElement === this.containerEl) {
+  removeChild (node) {
+    if (node.el.parentElement === this.containerEl) {
       this.containerEl.removeChild(node.el)
     }
     this.onChildRemoved(node)

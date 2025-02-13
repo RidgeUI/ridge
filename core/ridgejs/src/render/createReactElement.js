@@ -28,17 +28,12 @@ export default element => {
           }
         } else {
           this.ridgeElement = this.props.element
-          if (this.ridgeElement.el) { // 编辑期， 已经mount过
-            // ref.current.appendChild(ridgeElement.el)
-            this.ridgeElement.unmount()
-          } else { // 运行期
-          }
           this.ridgeElement.mount(this.ref.current)
         }
       }
 
       componentWillUnmount () {
-        this.ridgeElement.unmount()
+        // this.ridgeElement.unmount()
       }
 
       render () {

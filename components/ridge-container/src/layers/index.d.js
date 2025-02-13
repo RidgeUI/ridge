@@ -1,8 +1,9 @@
 import LayeredContainer from './LayeredContainer.js'
+import { boolean, children, classList } from 'ridge-build/src/props'
 export default {
   name: 'switch-container',
   component: LayeredContainer,
-  title: '动态切换',
+  title: '切换容器',
   type: 'vanilla',
   icon: 'icons/layers.svg',
   props: [{
@@ -11,22 +12,10 @@ export default {
     connect: true,
     type: 'string',
     value: ''
-  }, {
-    name: 'preload',
-    label: '预加载',
-    type: 'boolean',
-    value: true
-  }, {
-    name: 'classNames',
-    label: '样式',
-    type: 'class',
-    value: []
-  }, {
-    name: 'children',
-    hidden: true,
-    type: 'children',
-    value: []
-  }],
+  },
+  boolean('preload', '预加载', true),
+  classList(),
+  children],
   fullScreenable: true,
   width: 540,
   height: 360

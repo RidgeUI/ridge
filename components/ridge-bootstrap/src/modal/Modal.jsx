@@ -2,14 +2,14 @@ import React, { useRef, useEffect } from 'react'
 
 import { createPortal } from 'react-dom'
 export default ({
-  show,
+  value,
   title,
-  header,
   body,
   showFooter = true,
-  footer,
+  showHeader = true,
   width,
   height,
+  input,
   onClose,
   onConfirm,
   __isEdit,
@@ -19,6 +19,11 @@ export default ({
   const bodyRef = useRef()
   const footerRef = useRef()
 
+
+  const onClickClose = () => {
+    input && input(false)
+    onClose && onClose()
+  }
   useEffect(() => {
     if (!__isEdit) {
       // if (body) {
@@ -51,26 +56,19 @@ export default ({
   const ModalDialog = () => (
     <div className='modal-dialog' style={modalStyle}>
       <div className='modal-content' style={{ height: '100%' }}>
-        <div className='modal-header' ref={headerRef}>
-          {header && header()}
-          {!header &&
-            <>
-              <h1 className='modal-title fs-5' id='exampleModalLabel'>{title ?? ''}</h1>
-              <button onClick={onClose} type='button' className='btn-close' data-bs-dismiss='modal' aria-label='Close' />
-            </>}
-        </div>
+        {showHeader &&
+          <div className='modal-header' ref={headerRef}>
+            <h1 className='modal-title fs-5' id='exampleModalLabel'>{title ?? ''}</h1>
+            <button onClick={onClickClose} type='button' className='btn-close' data-bs-dismiss='modal' aria-label='Close' />
+          </div>}
         <div className='modal-body' ref={bodyRef}>
           {body && body()}
         </div>
         {
         showFooter &&
           <div className='modal-footer' ref={footerRef}>
-            {footer && footer()}
-            {!footer &&
-              <>
-                <button type='button' className='btn btn-secondary' data-bs-dismiss='modal' onClick={onClose}>关闭</button>
-                <button type='button' className='btn btn-primary' onClick={onConfirm}>{confirmText ?? '确定'}</button>
-              </>}
+            <button type='button' className='btn btn-secondary' data-bs-dismiss='modal' onClick={onClickClose}>关闭</button>
+            <button type='button' className='btn btn-primary' onClick={onConfirm}>{confirmText ?? '确定'}</button>
           </div>
         }
       </div>
@@ -79,13 +77,13 @@ export default ({
   return (
     <>
       {__isEdit
-        ? <div className={['modal', 'fade', 'show'].join(' ')} style={{ display: 'block' }}><ModalDialog /></div>
+        ? <div className={['modal', 'fade', 'show'].join(' ')} style={{ display: 'block', position: 'relative' }}><ModalDialog /></div>
         : createPortal(
           <>
-            <div className={['modal', 'fade', show ? 'show' : ''].join(' ')} style={{ display: show ? 'block' : 'none' }}>
+            <div className={['modal', 'fade', value ? 'show' : ''].join(' ')} style={{ display: value ? 'block' : 'none' }}>
               <ModalDialog />
             </div>
-            {show && <div class='modal-backdrop fade show' />}
+            {value && <div class='modal-backdrop fade show' />}
           </>,
           document.body
         )}

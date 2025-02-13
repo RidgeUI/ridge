@@ -39,8 +39,8 @@ export default ({
       style={css}
       type='button'
       disabled={disabled}
-      onClick={() => {
-        onClick && onClick()
+      onClick={ev => {
+        onClick && onClick(ev, 'ok')
       }}
       className={classList.join(' ')}
     >

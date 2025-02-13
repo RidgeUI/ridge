@@ -1,0 +1,15 @@
+{
+  "name": "ridge-calculator",
+  "version": "1.0.3",
+  "description": "Ridge计算器应用",
+  "keywords": [],
+  "ridgeType": "app",
+  "themes": {},
+  "dependencies": {
+    "ridge-container": "1.0.0",
+    "ridge-bootstrap": "^1.2.0"
+  },
+  "author": "",
+  "ridgeUserId": "15011245191",
+  "publishedBy": "ridgerobot"
+}

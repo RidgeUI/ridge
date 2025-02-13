@@ -15,6 +15,7 @@ const cleanImports = sourceCode => {
   }
 
   return {
+    sourceCode,
     updatedSourceCode,
     importStatements
   }
@@ -42,7 +43,9 @@ const loadJsModule = async sourceCode => {
   const jsGlobal = 'ridge-store-' + nanoid(10)
   // 去除import的部分
   const { updatedSourceCode, importStatements } = cleanImports(sourceCode)
-  scriptEl.textContent = updatedSourceCode.replace('export default', 'window["' + jsGlobal + '"]=')
+  // scriptEl.textContent = updatedSourceCode.replace('export default', 'window["' + jsGlobal + '"]=')
+
+  scriptEl.textContent = sourceCode.replace('export default', 'window["' + jsGlobal + '"]=')
 
   return new Promise((resolve, reject) => {
     try {

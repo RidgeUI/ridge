@@ -8,6 +8,8 @@ import get from 'lodash/get'
 // import cloneDeep from 'lodash/cloneDeep'
 // import { set, get, cloneDeep } from 'lodash'
 import { measureAsyncExecutionTime, measureExecutionTime } from './mesure'
+
+import { isArrowFunction } from '../utils/is'
 // import axios from 'axios'
 
 const log = debug('ridge:store')
@@ -37,9 +39,6 @@ export default class ValtioStoreObject {
 
     // 增加全局机制， 可以在store中通过 this.xxx 来设置和获取全局服务/变量， 但是这个变量不会绑定到数据，也不会变化后驱动组件改变
     this.globals = {}
-
-    // 外部模块，通过 store.externals字段定义后， 通过this进行访问。可以加载常用组件（axios/lodash)等
-    this.externalModules = {}
 
     // 当setup、destory、computed、action等方法执行时，传入的上下文对象。
     this.context = new Proxy(this, {
@@ -75,10 +74,8 @@ export default class ValtioStoreObject {
               } else if (typeof storeObject.module.computed[p].get === 'function') {
                 return storeObject.module.computed[p].get.call(storeObject.context)
               }
-            } else if (storeObject.globals[p]) { // 通过this.xxx设置上的场合
+            } else if (storeObject.globals[p] !== undefined) { // 通过this.xxx设置上的场合
               return storeObject.globals[p]
-            } else if (storeObject.externalModules[p]) { // external定义的
-              return storeObject.externalModules[p]
             } else if (window[p]) {
               return window[p]
             }
@@ -105,23 +102,10 @@ export default class ValtioStoreObject {
     this.properties = properties
     this.globalVariables = globalVariables
 
-    if (this.module.externals) {
-      for (const ext of Object.keys(this.module.externals)) {
-        await this.composite.context.loadScript(this.module.externals[ext])
-        this.externalModules[ext] = window[ext]
-      }
-    }
-    // 外部未设置值+Store给了默认值
-    for (const property of (this.module.properties || [])) {
-      if (this.properties[property.name] == null && property.value != null) {
-        this.properties[property.name] = property.value
-      }
-    }
-
     // 从属性初始化组件state
     if (typeof this.module.state === 'function') {
       try {
-        this.state = proxy(await this.module.state(properties))
+        this.state = proxy(this.module.state(properties))
       } catch (e) {
         console.error('initStore Error', e)
       }
@@ -129,8 +113,28 @@ export default class ValtioStoreObject {
       this.state = proxy(cloneDeep(this.module.state))
     } else {
       // 无状态
-      this.state = {}
+      this.state = proxy({})
     }
+
+    // 外部未设置值+Store给了默认值
+    for (const property of (this.module.properties || [])) {
+      if (this.properties[property.name] == null && property.value != null) {
+        this.properties[property.name] = property.value
+      }
+    }
+
+    if (this.module.externals) {
+      if (Array.isArray(this.module.externals)) {
+        for (const ext of this.module.externals) {
+          await this.composite.context.loadScript(ext)
+        }
+      } else { // lts 后续移除
+        for (const ext of Object.keys(this.module.externals)) {
+          await this.composite.context.loadScript(this.module.externals[ext])
+        }
+      }
+    }
+
     // 判断 初始化过后部重复监听
     if (this.state) {
       // 初始化监听state变化
@@ -295,18 +299,26 @@ export default class ValtioStoreObject {
       try {
         const args = []
 
+        // 0. 箭头函数：第一个参数是context
+        if (isArrowFunction(this.module.actions[actionName])) {
+          args.push(this.context)
+        }
         // 1. 方法配置的参数
         if (eventArgs !== '') {
           args.push(eventArgs)
         }
-        // 2. 发出事件时携带的payload, 可能是多个
-        args.push(...payload)
-
-        // 3. 在列表嵌套情况下， scope信息，每层嵌套一个
+        // 2. 在列表嵌套情况下， scope信息，每层嵌套一个
         if (scopedData && scopedData.length) {
           args.push(...scopedData)
         }
-
+        // 3. 发出事件时携带的payload, 可能是多个
+        if (payload != null) {
+          if (Array.isArray(payload)) {
+            args.push(...payload)
+          } else {
+            args.push(payload)
+          }
+        }
         const dura = measureExecutionTime(() => {
           //  this.module.setup.call(this.context)
           const exeResult = this.module.actions[actionName].call(this.context, ...args)
@@ -367,7 +379,7 @@ export default class ValtioStoreObject {
 
     watchers.push(...Array.from(globalWatchers).map(w => {
       return () => {
-        w.call(this.context, oldValue)
+        w.call(this.context, oldValue, newValue)
       }
     }))
     this.scheduleCallback(watchers)

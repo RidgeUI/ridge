@@ -4,8 +4,6 @@ export default ({
   size = '',
   options,
   validState,
-  validMsg,
-  invalidMsg,
   disabled,
   onChange,
   input
@@ -27,8 +25,6 @@ export default ({
       >
         {options && options.map(op => <option value={op.value} key={op.value}>{op.label}</option>)}
       </select>
-      {validState === true && <div class='valid-feedback'>{validMsg}</div>}
-      {validState === false && <div class='invalid-feedback'>{invalidMsg}</div>}
     </>
   )
 }

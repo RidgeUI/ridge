@@ -1,4 +1,4 @@
-import Tabs from './Tabs.js'
+import Tabs from './Tabs.jsx'
 import { optionConfig, radiogroup } from 'ridge-build/src/props.js'
 export default {
   name: 'Tabs',

@@ -1,5 +1,5 @@
 import Image from './Image.jsx'
-import { image, classList } from 'ridge-build/src/props.js'
+import { image, classList, objectFit } from 'ridge-build/src/props.js'
 export default {
   name: 'Image',
   title: '图片',
@@ -7,6 +7,7 @@ export default {
   icon: 'bi bi-image',
   type: 'react',
   props: [
+    objectFit,
     image(),
     classList()
   ],

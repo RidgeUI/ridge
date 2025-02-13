@@ -11,8 +11,6 @@ export default {
     value(),
     optionConfig('options', '选项'),
     radiogroup('size', '尺寸', size, 'form-control-normal', false),
-    string('validaMsg', '有效提示', '输入正确'),
-    string('invalidMsg', '无效提示', '输入错误'),
     boolean('disabled', '禁用', false),
     validateState,
     disabled],

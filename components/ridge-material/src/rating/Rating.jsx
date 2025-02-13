@@ -6,6 +6,8 @@ export default ({
   size,
   max = 5,
   half,
+  disabled,
+  readOnly,
   input,
   onChange
 }) => {
@@ -14,6 +16,8 @@ export default ({
       value={value}
       size={size}
       max={max}
+      disabled={disabled}
+      readOnly={readOnly}
       precision={half ? 0.5 : 1}
       onChange={(event, newValue) => {
         input && input(newValue)

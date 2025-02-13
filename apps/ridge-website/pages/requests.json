@@ -1,0 +1,148 @@
+{
+  "version": "1.2.0",
+  "style": {
+    "width": 1920,
+    "height": 1080,
+    "background": "",
+    "classNames": []
+  },
+  "properties": {},
+  "cssFiles": [],
+  "jsFiles": [
+    "composite:///js/request-admin.js"
+  ],
+  "elements": [
+    {
+      "title": "表格",
+      "path": "ridge-bootstrap/table",
+      "id": "sxy6g833pf",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 16,
+        "y": 23,
+        "width": 475,
+        "height": 574
+      },
+      "styleEx": {},
+      "props": {
+        "dataSource": [
+          {
+            "name": "Semi Design 设计稿.fig",
+            "size": "2M",
+            "owner": "姜鹏志",
+            "updateTime": "2020-02-02 05:13"
+          },
+          {
+            "name": "设计文档",
+            "size": "34KB",
+            "owner": "Zoey Edwards",
+            "updateTime": "2020-01-26 11:01"
+          }
+        ],
+        "columns": [
+          {
+            "label": "名称",
+            "value": "name"
+          },
+          {
+            "label": "大小",
+            "value": "user"
+          }
+        ],
+        "showLineNumber": true
+      },
+      "propEx": {
+        "dataSource": "RequestAdmin.state.requests"
+      },
+      "events": {
+        "onClick": [
+          {
+            "store": "RequestAdmin",
+            "method": "requestClick",
+            "payload": ""
+          }
+        ]
+      },
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "文本",
+      "path": "ridge-bootstrap/typography",
+      "id": "ae7q7cpj3t",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 31,
+        "y": 680,
+        "width": 189,
+        "height": 21
+      },
+      "styleEx": {},
+      "props": {
+        "text": "文本",
+        "classList": []
+      },
+      "propEx": {
+        "text": "RequestAdmin.state.currentName"
+      },
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "按钮",
+      "path": "ridge-bootstrap/button",
+      "id": "4goyyjgrk8",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 31,
+        "y": 730,
+        "width": 61,
+        "height": 37
+      },
+      "styleEx": {},
+      "props": {
+        "type": "primary",
+        "src": "",
+        "size": "btn-normal",
+        "style": "general",
+        "rounded": false,
+        "full": false,
+        "disabled": false,
+        "withBadge": false,
+        "badgeCount": "",
+        "text": "通过"
+      },
+      "propEx": {},
+      "events": {
+        "onClick": [
+          {
+            "store": "RequestAdmin",
+            "method": "approve",
+            "payload": ""
+          }
+        ]
+      },
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    }
+  ],
+  "name": "requests",
+  "children": [
+    "sxy6g833pf",
+    "ae7q7cpj3t",
+    "4goyyjgrk8"
+  ]
+}

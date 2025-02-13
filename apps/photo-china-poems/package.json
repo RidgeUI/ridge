@@ -1,0 +1,17 @@
+{
+  "name": "photo-china-poems",
+  "version": "1.0.1",
+  "description": "从照片获取中国古诗词",
+  "keywords": [],
+  "ridgeType": "app",
+  "themes": {},
+  "dependencies": {
+    "ridge-container": "1.0.0",
+    "ridge-bootstrap": "^1.2.0",
+    "ridge-semi": "^1.2.0",
+    "ridge-material": "^1.2.0"
+  },
+  "author": "Ridge",
+  "ridgeUserId": "15011245191",
+  "publishedBy": "ridgerobot"
+}

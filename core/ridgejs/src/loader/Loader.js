@@ -317,13 +317,12 @@ class Loader {
     }
     await Promise.allSettled(loading)
 
-    // 支持主题的包，加载指定主题
-    if (packageJSONObject.themes) {
-      if (window.ridgeTheme && window.ridgeTheme[packageName] && packageJSONObject.themes[window.ridgeTheme[packageName]]) {
-        this.loadPackageTheme(packageName, packageJSONObject.themes[window.ridgeTheme[packageName]])
-      } else {
-        this.loadPackageTheme(packageName, packageJSONObject.themes.default)
-      }
+    if (window.ridgeTheme && window.ridgeTheme[packageName]) {
+      // 全局定义了当前组件库的主题样式位置
+      this.loadPackageTheme(packageName, window.ridgeTheme[packageName])
+    } else if (packageJSONObject.themes) {
+      // 支持主题的包，加载指定主题
+      this.loadPackageTheme(packageName, packageJSONObject.themes.default)
     }
   }
 

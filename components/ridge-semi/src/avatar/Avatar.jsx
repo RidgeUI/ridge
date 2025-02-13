@@ -10,7 +10,8 @@ export default ({
   topLabel,
   borderColor,
   color,
-  bottomPlus
+  bottomPlus,
+  onClick
 }) => {
   const props = {}
 
@@ -39,8 +40,14 @@ export default ({
     <Avatar
       size={size}
       color={color}
+      style={{
+        background: color
+      }}
       shape={shape}
       src={src}
+      onClick={() => {
+        onClick && onClick()
+      }}
       contentMotion={contentMotion}
       {...props}
     >{text}

@@ -9,18 +9,17 @@ export default class ListContainer {
 
   mount (el) {
     this.el = el
+    this.scrollerEl = document.createElement('div')
     this.containerEl = document.createElement('div')
 
-    try {
-      this.containerEl.classList.add(...(this.props.classNames ?? []).join(' ').split(' '))
-    } catch (e) {
-
-    }
+    this.scrollerEl.style.width = '100%'
+    this.scrollerEl.style.height = '100%'
     // for (const className of this.props.classNames ?? []) {
     //   this.containerEl.classList.add(className)
     // }
 
-    el.appendChild(this.containerEl)
+    el.appendChild(this.scrollerEl)
+    this.scrollerEl.appendChild(this.containerEl)
     this.renderUpdate()
   }
 
@@ -40,8 +39,9 @@ export default class ListContainer {
     const {
       classNames
     } = this.props
-    this.containerEl.className = classNames.join(' ')
+    this.scrollerEl.className = classNames.join(' ')
     Object.assign(this.containerEl.style, this.getContainerStyle())
+    Object.assign(this.scrollerEl.style, this.getScrollerStyle())
     if (!this.props.__isEdit) {
       // 运行状态
       this.renderListItems()
@@ -73,41 +73,57 @@ export default class ListContainer {
     }
   }
 
+  getScrollerStyle () {
+    const {
+      layout,
+      padding
+    } = this.props
+    if (layout === 'list' || layout === 'flex' || layout === 'grid') {
+      return {
+        boxSizing: 'border-box',
+        padding: padding + 'px',
+        overflow: 'hidden auto'
+      }
+    }
+    if (layout === 'line') {
+      return {
+        boxSizing: 'border-box',
+        padding: padding + 'px',
+        overflow: 'auto hidden'
+      }
+    }
+  }
+
   getContainerStyle () {
     const {
-      padding,
       gap,
-      layout,
-      columns = 2,
-      rows = 0
+      layout
     } = this.props
 
     const containerStyle = {
-      width: '100%',
-      height: '100%',
       gap: gap + 'px',
-      padding: padding + 'px',
-      boxSizing: 'border-box'
+      display: 'flex',
+      padding: 0
     }
     if (layout === 'list') { // 竖行列表： 纵向排列，一行一个
-      containerStyle.display = 'flex'
+      containerStyle.width = '100%'
       containerStyle.flexDirection = 'column'
-      containerStyle.alignContent = 'flex-start'
-      containerStyle.overflow = 'auto'
     }
-    if (layout === 'flex') { // 换行列表： 按固定宽度或者定义宽度横向排列、放不下换行
-      containerStyle.display = 'flex'
+    if (layout === 'line') { // 单行模式
+      containerStyle.height = '100%'
+      containerStyle.width = 'fit-content'
+      containerStyle.flexDirection = 'row'
+    }
+    if (layout === 'flex') { // 横向
+      containerStyle.width = '100%'
       containerStyle.flexDirection = 'row'
       containerStyle.flexWrap = 'wrap'
-      containerStyle.alignContent = 'flex-start'
-      containerStyle.overflow = 'auto'
     }
     if (layout === 'grid') { // 矩阵式： 按定义横向横向方式
-      containerStyle.display = 'grid'
-      containerStyle.overflow = 'auto'
-      containerStyle.alignContent = 'start'
-      containerStyle.gridTemplateColumns = `repeat(${columns || 1}, 1fr)`
-      this.containerEl.style.gridTemplateRows = `repeat(${rows || 1}, 1fr)`
+      containerStyle.width = '100%'
+      containerStyle.height = '100%'
+      containerStyle.flexDirection = 'row'
+      containerStyle.flexWrap = 'wrap'
     }
     return containerStyle
   }
@@ -117,7 +133,7 @@ export default class ListContainer {
    */
   async renderListItems () {
     if (!this.props.template) return
-    const { dataSource, fixed, layout, template, fixedHeight, onItemClick, selected, itemClassNames = [], selectedClassNames = [] } = this.props
+    const { dataSource, fixed, layout, gap, padding, rows, columns, template, fixedHeight, fixedWidth, onItemClick, selected, itemClassNames = [], selectedClassNames = [] } = this.props
 
     debug('renderListItems', dataSource)
     await template.load(true)
@@ -152,12 +168,24 @@ export default class ListContainer {
           if (layout === 'list' && fixedHeight) {
             itemWrapperStyle.height = itemComponent.config.style.height + 'px'
           }
+          // 单行列表，固定宽度
+          if (layout === 'line' && fixedWidth) {
+            itemWrapperStyle.width = itemComponent.config.style.width + 'px'
+          }
 
           // 换行列表、固定宽高
           if (layout === 'flex' && fixed) {
             itemWrapperStyle.height = itemComponent.config.style.height + 'px'
             itemWrapperStyle.width = itemComponent.config.style.width + 'px'
           }
+          // 换行列表、固定宽高
+          if (layout === 'grid') {
+            // itemWrapperStyle.flex = `1 1 calc((100% - ${gap * (columns - 1)}px) / ${columns})`
+            itemWrapperStyle.height = `calc((100% - ${gap * (rows - 1)}px) / ${rows})`
+            itemWrapperStyle.width = `calc((100% - ${gap * (columns - 1)}px) / ${columns})`
+            // itemWrapperStyle.height = (100 / rows) + '%'
+          }
+
           Object.assign(newEl.style, itemWrapperStyle)
           this.containerEl.appendChild(newEl)
           newEl.onclick = () => {

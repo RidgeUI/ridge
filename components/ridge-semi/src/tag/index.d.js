@@ -1,5 +1,5 @@
-import { event, onClick } from '../../../../core/tools/src/props.js'
-import { color } from '../props.js'
+import { event, onClick, color as customColor } from 'ridge-build/src/props.js'
+import { color, tagTheme, type } from '../props.js'
 import Tag from './Tag.jsx'
 export default {
   name: 'Tag',
@@ -14,7 +14,7 @@ export default {
     type: 'string',
     connect: true,
     value: '标签'
-  }, {
+  }, tagTheme, {
     label: '可关闭',
     name: 'closable',
     type: 'boolean'
@@ -31,7 +31,12 @@ export default {
     }],
     control: 'radiogroup',
     value: 'small'
-  }, color],
+  }, color, {
+    label: '自定义颜色',
+    name: 'customColor',
+    type: 'string',
+    connect: true
+  }],
   events: [
     onClick,
     event('onClose', '关闭')

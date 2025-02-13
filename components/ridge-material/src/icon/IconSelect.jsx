@@ -11,7 +11,13 @@ export default ({
         return {
           key: name,
           label: name,
-          Component: <span className='material-icons'>{name}</span>
+          Component: <span
+            className='material-icons' style={{
+              fontSize: '24px',
+              color: '#343a40'
+            }}
+                     >{name}
+          </span>
         }
       })}
     />

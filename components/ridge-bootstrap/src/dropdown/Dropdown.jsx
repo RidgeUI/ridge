@@ -23,13 +23,15 @@ export default ({
           <span class='visually-hidden'>Toggle Dropdown</span>
         </button>}
       <ul className='dropdown-menu'>
-        {menus.map(menu => <li key={menu.value}><a
-          className='dropdown-item' href='#' onClick={() => {
-            onMenuClick && onMenuClick(menu.value, menu.label)
-          }}
-                                                >{menu.label}
-        </a>
-        </li>)}
+        {menus.map(menu =>
+          <li key={menu.value}>
+            <a
+              className='dropdown-item' href='#' onClick={() => {
+                onMenuClick && onMenuClick(menu.value, menu.label)
+              }}
+            >{menu.label}
+            </a>
+          </li>)}
       </ul>
     </div>
   )

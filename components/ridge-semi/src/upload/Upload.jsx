@@ -33,8 +33,13 @@ export default ({
 
   const fileChange = (fileList) => {
     const newFileList = [...fileList] // spread to get new array
-    input && input(newFileList)
-    onChange && onChange(newFileList)
+
+    let outputValue = newFileList.map(item => URL.createObjectURL(item))
+    if (!multiple) {
+      outputValue = outputValue[0]
+    }
+    input && input(outputValue)
+    onChange && onChange(outputValue)
   }
   const acceptProp = {
     action: 'https://api.semi.design/upload',

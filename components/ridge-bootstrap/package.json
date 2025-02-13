@@ -1,6 +1,6 @@
 {
   "name": "ridge-bootstrap",
-  "version": "1.2.0",
+  "version": "1.2.2",
   "icon": "icons/bootstrap.svg",
   "description": "Bootstrap样式",
   "author": {
@@ -10,7 +10,7 @@
   "main": "index.js",
   "scripts": {
     "build": "ridge",
-    "postbuild": "npm version patch && npm publish",
+    "postbuild-1": "npm version patch && npm publish",
     "watch": "ridge -w -s",
     "help": "ridge --help",
     "pd": "npm publish --tag dev"

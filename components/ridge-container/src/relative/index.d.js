@@ -3,7 +3,7 @@ import { children, classList, boolean } from 'ridge-build/src/props.js'
 export default {
   name: 'relative-container',
   component: RelativeContainer,
-  title: '自由布局',
+  title: '自由容器',
   type: 'vanilla',
   icon: 'icons/free.svg',
   props: [

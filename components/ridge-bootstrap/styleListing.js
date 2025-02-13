@@ -232,6 +232,18 @@ const borderRadius = {
   }]
 }
 
+const opacity = {
+  label: '透明度',
+  value: 'opacity',
+  multiple: false,
+  classList: ['0', '25', '50', '75', '100'].map(op => {
+    return {
+      key: 'opacity-' + op,
+      html: `<div class="opacity-${op} p-3 m-2 bg-primary text-light fw-bold rounded">${op}%</div>`
+    }
+  })
+}
+
 const padding = {
   label: '内边距',
   value: 'padding',
@@ -243,4 +255,4 @@ const padding = {
     }
   })
 }
-export default [textColor, fontSize, fontWeight, textAlign, textOther, backgroundColor, shadow, border, borderWidth, borderColor, borderRadius, padding]
+export default [textColor, fontSize, fontWeight, textAlign, textOther, backgroundColor, shadow, border, borderWidth, borderColor, borderRadius, padding, opacity]

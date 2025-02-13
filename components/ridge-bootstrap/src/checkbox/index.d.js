@@ -1,6 +1,6 @@
 import { validateState } from '../props.js'
 import CheckBox from './CheckBox.jsx'
-import { boolean, string, value, optionConfig } from 'ridge-build/src/props.js'
+import { boolean, value, optionConfig } from 'ridge-build/src/props.js'
 export default {
   name: 'checkbox',
   title: '多选',
@@ -11,8 +11,6 @@ export default {
     value('array', '选中', []),
     optionConfig(),
     validateState,
-    string('validaMsg', '有效提示', '输入正确'),
-    string('invalidMsg', '无效提示', '输入错误'),
     boolean('disabled', '禁用', false),
     boolean('inline', '行模式', false)
   ],

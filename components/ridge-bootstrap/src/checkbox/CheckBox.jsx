@@ -4,9 +4,7 @@ export default ({
   input,
   options,
   inline,
-  validState,
-  validMsg,
-  invalidMsg
+  validState
 }) => {
   let validName = ''
   if (validState === true) {
@@ -41,8 +39,6 @@ export default ({
             {op.label}
           </label>
         </div>)}
-      {validState === true && <div class='valid-feedback'>{validMsg}</div>}
-      {validState === false && <div class='invalid-feedback'>{invalidMsg}</div>}
     </>
   )
 }

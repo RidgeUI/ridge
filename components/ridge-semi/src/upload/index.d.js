@@ -1,6 +1,6 @@
 import Upload from './Upload.jsx'
 import { icon } from '../props'
-import { boolean, radiogroup, string, number, image, value } from 'ridge-build/src/props.js'
+import { boolean, radiogroup, string, number, image, value, onChange } from 'ridge-build/src/props.js'
 export default {
   name: 'upload',
   title: '上传',
@@ -30,6 +30,7 @@ export default {
     boolean('multiple', '可多选', true),
     boolean('directory', '按目录', false)
   ],
+  events: [onChange],
   width: 300,
   height: 40
 

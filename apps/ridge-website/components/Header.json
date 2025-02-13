@@ -1,0 +1,707 @@
+{
+  "version": "1.2.0",
+  "style": {
+    "width": 1420,
+    "height": 60,
+    "background": "",
+    "classNames": [],
+    "heightFix": false,
+    "widthFix": false
+  },
+  "properties": {},
+  "cssFiles": [],
+  "jsFiles": [
+    "composite:///js/bootstrap-themes.js",
+    "/ridge-common/js/browser.js",
+    "/ridge-common/js/user.js"
+  ],
+  "elements": [
+    {
+      "title": "弹性容器1",
+      "path": "ridge-container/flex",
+      "id": "rokf3tmp08",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 388,
+        "y": -91,
+        "width": 360,
+        "height": 240
+      },
+      "styleEx": {},
+      "props": {
+        "direction": "row",
+        "justify": "flex-start",
+        "alignItems": "center",
+        "children": [
+          "1h43bwx1bs",
+          "j1w7cov2gu",
+          "gme4kskgp4",
+          "tfw6v0m6ic"
+        ],
+        "gap": 0,
+        "padding": 0,
+        "classList": []
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": true,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "弹性容器2",
+      "path": "ridge-container/flex",
+      "id": "1h43bwx1bs",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 156,
+        "height": 60.00000251518501
+      },
+      "styleEx": {},
+      "props": {
+        "direction": "row",
+        "justify": "flex-start",
+        "alignItems": "center",
+        "children": [
+          "xzxg2a9bml",
+          "objaxjqtga"
+        ],
+        "gap": 5,
+        "padding": 12,
+        "classList": []
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "unlogin",
+      "path": "ridge-container/flex",
+      "id": "fxny9p09nd",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 1060,
+        "y": 135,
+        "width": 131,
+        "height": 49
+      },
+      "styleEx": {},
+      "props": {
+        "direction": "row",
+        "justify": "flex-end",
+        "alignItems": "center",
+        "children": [
+          "ifmsp3i5b1"
+        ],
+        "gap": 0,
+        "padding": 0,
+        "classList": []
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "弹性容器4",
+      "path": "ridge-container/flex",
+      "id": "j1w7cov2gu",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 979,
+        "height": 51
+      },
+      "styleEx": {},
+      "props": {
+        "direction": "row",
+        "justify": "flex-start",
+        "alignItems": "center",
+        "children": [
+          "9vmy1zhg18",
+          "1hshc03s9t",
+          "irldvkqvhp",
+          "wwywvp7pfa",
+          "jd643ud9g7"
+        ],
+        "gap": 28,
+        "padding": 8,
+        "classList": []
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "超链接1",
+      "path": "ridge-bootstrap/link",
+      "id": "9vmy1zhg18",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 54,
+        "height": 24
+      },
+      "styleEx": {},
+      "props": {
+        "classList": [
+          "ridge-bootstrap/text-decoration-none",
+          "ridge-bootstrap/text-body"
+        ],
+        "icon": "house-door",
+        "text": "首页",
+        "href": "#/index"
+      },
+      "propEx": {},
+      "events": {
+        "onClick": []
+      },
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "超链接2",
+      "path": "ridge-bootstrap/link",
+      "id": "1hshc03s9t",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 86,
+        "height": 24
+      },
+      "styleEx": {},
+      "props": {
+        "classList": [
+          "ridge-bootstrap/text-decoration-none",
+          "ridge-bootstrap/text-body"
+        ],
+        "text": "应用示例",
+        "icon": "box-seam",
+        "href": "#/pages/repo"
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "按钮_1",
+      "path": "ridge-bootstrap/button",
+      "id": "ifmsp3i5b1",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 1126,
+        "y": 231,
+        "width": 106,
+        "height": 33
+      },
+      "styleEx": {},
+      "props": {
+        "type": "primary",
+        "src": "",
+        "icon": "person-circle",
+        "size": "sm",
+        "style": "general",
+        "rounded": false,
+        "full": false,
+        "disabled": false,
+        "withBadge": false,
+        "badgeCount": "",
+        "text": "登录/注册"
+      },
+      "propEx": {},
+      "events": {
+        "onClick": [
+          {
+            "store": "Browser",
+            "method": "openLink",
+            "payload": "#/pages/login"
+          }
+        ]
+      },
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "超链接2",
+      "path": "ridge-bootstrap/link",
+      "id": "irldvkqvhp",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 59,
+        "height": 24
+      },
+      "styleEx": {},
+      "props": {
+        "classList": [
+          "ridge-bootstrap/text-decoration-none",
+          "ridge-bootstrap/text-body"
+        ],
+        "text": "文档",
+        "icon": "book",
+        "href": "#/pages/document"
+      },
+      "propEx": {},
+      "events": {
+        "onClick": []
+      },
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "超链接2",
+      "path": "ridge-bootstrap/link",
+      "id": "wwywvp7pfa",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 56,
+        "height": 24
+      },
+      "styleEx": {},
+      "props": {
+        "classList": [
+          "ridge-bootstrap/text-decoration-none",
+          "ridge-bootstrap/text-success"
+        ],
+        "icon": "gem",
+        "href": "#/pages/plan",
+        "text": "定价"
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "矩形",
+      "path": "ridge-bootstrap/div",
+      "id": "xzxg2a9bml",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 34,
+        "height": 35
+      },
+      "styleEx": {},
+      "props": {
+        "mask": "composite:///image/CbiRoomsattic.svg",
+        "classList": [
+          "ridge-bootstrap/bg-primary"
+        ]
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "文本",
+      "path": "ridge-bootstrap/typography",
+      "id": "objaxjqtga",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 75,
+        "height": 22
+      },
+      "styleEx": {},
+      "props": {
+        "text": "RIDGE",
+        "classList": [
+          "ridge-bootstrap/text-secondary-emphasis",
+          "ridge-bootstrap/lh-1",
+          "ridge-bootstrap/fw-semibold",
+          "ridge-bootstrap/fs-5"
+        ]
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "动态切换",
+      "path": "ridge-container/layers",
+      "id": "tfw6v0m6ic",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 121,
+        "height": 49
+      },
+      "styleEx": {},
+      "props": {
+        "current": "logon",
+        "preload": true,
+        "classNames": [],
+        "children": [
+          "uc1xdr8uje",
+          "fxny9p09nd"
+        ]
+      },
+      "propEx": {
+        "current": "RidgeUser.state.displayState"
+      },
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "logon",
+      "path": "ridge-container/flex",
+      "id": "uc1xdr8uje",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 112,
+        "height": 49.000000167679
+      },
+      "styleEx": {},
+      "props": {
+        "direction": "row",
+        "justify": "flex-start",
+        "alignItems": "center",
+        "flexWrap": false,
+        "fill": false,
+        "children": [
+          "yawrt70yvl",
+          "fc4iwfxw2t"
+        ],
+        "gap": 8,
+        "padding": 8,
+        "classList": []
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "按钮",
+      "path": "ridge-bootstrap/button",
+      "id": "fc4iwfxw2t",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 1,
+        "y": 0,
+        "width": 52,
+        "height": 30
+      },
+      "styleEx": {},
+      "props": {
+        "text": "退出",
+        "type": "link",
+        "src": "",
+        "size": "sm",
+        "style": "light",
+        "rounded": false,
+        "full": false,
+        "disabled": false,
+        "withBadge": false,
+        "badgeCount": ""
+      },
+      "propEx": {},
+      "events": {
+        "onClick": [
+          {
+            "store": "RidgeUser",
+            "method": "logout",
+            "payload": ""
+          }
+        ]
+      },
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "下拉菜单",
+      "path": "ridge-bootstrap/dropdown",
+      "id": "pztcsow3r1",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 60,
+        "height": 30
+      },
+      "styleEx": {},
+      "props": {
+        "type": "secondary",
+        "size": "sm",
+        "split": false,
+        "menus": [
+          {
+            "label": "选项1",
+            "value": "value1"
+          },
+          {
+            "label": "选项2",
+            "value": "value2"
+          }
+        ],
+        "btnText": "配色"
+      },
+      "propEx": {
+        "menus": "BootStrapThemes.state.themes"
+      },
+      "events": {
+        "onMenuClick": [
+          {
+            "store": "BootStrapThemes",
+            "method": "setTheme",
+            "payload": ""
+          }
+        ]
+      },
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "弹性容器",
+      "path": "ridge-container/flex",
+      "id": "gme4kskgp4",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 143,
+        "height": 41.000001509111
+      },
+      "styleEx": {},
+      "props": {
+        "direction": "row",
+        "justify": "flex-start",
+        "alignItems": "center",
+        "flexWrap": false,
+        "fill": false,
+        "children": [
+          "migpjio1on",
+          "bsr7zyki54",
+          "pztcsow3r1"
+        ],
+        "gap": 5,
+        "padding": 8,
+        "classList": []
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "切换",
+      "path": "ridge-bootstrap/toggle",
+      "id": "migpjio1on",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 34,
+        "height": 23
+      },
+      "styleEx": {},
+      "props": {
+        "value": false,
+        "disabled": false
+      },
+      "propEx": {
+        "value": "BootStrapThemes.state.isDark"
+      },
+      "events": {
+        "onClick": [
+          {
+            "store": "BootStrapThemes",
+            "method": "toggleColorMode",
+            "payload": ""
+          }
+        ]
+      },
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "图标",
+      "path": "ridge-bootstrap/icons",
+      "id": "bsr7zyki54",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 3,
+        "width": 27,
+        "height": 22
+      },
+      "styleEx": {},
+      "props": {
+        "icon": "circle-half",
+        "btn": false,
+        "classList": [
+          "ridge-bootstrap/text-body-secondary"
+        ]
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "图片",
+      "path": "ridge-bootstrap/image",
+      "id": "yawrt70yvl",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 40,
+        "height": 39
+      },
+      "styleEx": {},
+      "props": {
+        "src": "",
+        "classList": [
+          "ridge-bootstrap/rounded-circle"
+        ]
+      },
+      "propEx": {
+        "src": "RidgeUser.state.userAvatar"
+      },
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "超链接2",
+      "path": "ridge-bootstrap/link",
+      "id": "jd643ud9g7",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 71,
+        "height": 24
+      },
+      "styleEx": {},
+      "props": {
+        "classList": [
+          "ridge-bootstrap/text-decoration-none",
+          "ridge-bootstrap/text-body"
+        ],
+        "icon": "arrow-down",
+        "href": "#/pages/download",
+        "text": "下载"
+      },
+      "propEx": {},
+      "events": {
+        "onClick": []
+      },
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    }
+  ],
+  "name": "Header",
+  "children": [
+    "rokf3tmp08"
+  ],
+  "events": {
+    "irldvkqvhp-onClick": [
+      {
+        "store": "Browser",
+        "method": "openLink",
+        "payload": "/pages/request"
+      }
+    ]
+  }
+}

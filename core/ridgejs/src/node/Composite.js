@@ -155,7 +155,10 @@ class Composite extends BaseNode {
   }
 
   // 挂载
-  async mount (el) {
+  async mount (el, themeRoot) {
+    try {
+      this.beforeMount && this.beforeMount(el)
+    } catch (e) {}
     if (el) {
       this.el = el
 
@@ -164,6 +167,7 @@ class Composite extends BaseNode {
       }
       this.el.ridgeComposite = this
     }
+    this.removeStatus()
     debug(this.packageName, this.compositePath, 'mounting')
 
     if (!this.config) {
@@ -174,6 +178,7 @@ class Composite extends BaseNode {
 
     if (!this.config) {
       this.setStatus('Page-not-found')
+      this.onPageNotFound && this.onPageNotFound(this)
       return
     }
     if (!this.firstPainted) {
@@ -185,12 +190,21 @@ class Composite extends BaseNode {
       this.appPackageObject = await this.context.loadAppPackageJSON(this.packageName)
     }
 
+    if (themeRoot) { // 作为根节点挂载时，要配置全局样式
+      window.ridgeTheme = {}
+      if (this.appPackageObject.themes) {
+        for (const theme of Object.keys(this.appPackageObject.themes)) {
+          window.ridgeTheme[theme] = this.appPackageObject.themes[theme]
+        }
+      }
+    }
     debug('style updated')
     await this.importJSFiles()
     await this.loadStore()
     debug(this.packageName, this.compositePath, 'js imported')
     // 挂载前事件
     this.emit('postMount')
+    this.postMount && await this.postMount()
     // 挂载根节点
     debug(this.packageName, this.compositePath, 'mounting all root eles')
 
@@ -200,10 +214,10 @@ class Composite extends BaseNode {
     }
     await Promise.allSettled(promises)
 
-    this.onPageLoaded && this.onPageLoaded()
     debug(this.packageName, this.compositePath, 'mounted')
     this.initializeEvents()
-    this.emit('loaded')
+    this.emit('mounted')
+    this.mounted && this.mounted()
   }
 
   /**
@@ -246,8 +260,8 @@ class Composite extends BaseNode {
     this.el.setAttribute('composite-id', this.getCompositeId())
     if (this.config && this.config.style && this.el) {
       this.el.style.background = ''
-
       if (this.config.style.widthFix) {
+        // 固定宽度则配置溢出隐藏
         this.el.style.width = this.config.style.width + 'px'
         this.el.style.overflowX = 'hidden'
       } else {
@@ -259,6 +273,10 @@ class Composite extends BaseNode {
       } else {
         this.el.style.height = '100%'
       }
+
+      // if (!this.config.style.widthFix && !this.config.style.heightFix) {
+      //   this.el.style.overflow = 'hidden'
+      // }
       const { background, classNames = [] } = this.config.style
       background && Object.assign(this.el.style, {
         background
@@ -314,7 +332,9 @@ class Composite extends BaseNode {
 
   initializeEvents () {
     this.el.onclick = event => {
-      this.emit('onClick', [event])
+      if (event.target === this.el) {
+        this.emit('onClick', [event])
+      }
     }
   }
 
@@ -395,17 +415,22 @@ class Composite extends BaseNode {
   async loadStore () {
     // 加载页面引入的storejs
     this.store = new ValtioStore(this)
-    this.store.load(this.jsModules, this.properties)
+    try {
+      this.store.load(this.jsModules, this.properties)
+    } catch (e) {
+      console.error('Store Load Fail: ', e)
+    }
 
-    // 状态库类型节点
+    // 状态库类型节点 弃用
+    /*
     const storeNodes = this.getNodes().filter(node => node.config.store)
-
     for (const storeNode of storeNodes) {
       await storeNode.load()
       this.store.load([Object.assign({}, storeNode.componentDefinition.component, {
         name: storeNode.config.id
       })], storeNode.getProperties())
     }
+    */
   }
 }
 

@@ -1,0 +1,397 @@
+{
+  "version": "1.2.0",
+  "style": {
+    "width": 800,
+    "height": 600,
+    "background": "",
+    "classNames": []
+  },
+  "properties": {},
+  "cssFiles": [],
+  "jsFiles": [
+    "composite:///color-poems.js"
+  ],
+  "elements": [
+    {
+      "title": "上传",
+      "path": "ridge-semi/upload",
+      "id": "h302jf81p3",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": -4,
+        "width": 80,
+        "height": 32
+      },
+      "styleEx": {},
+      "props": {
+        "value": [],
+        "type": "button",
+        "url": "",
+        "fileLimit": "",
+        "maxSize": 10,
+        "multiple": false,
+        "directory": false,
+        "btnText": "选择图片"
+      },
+      "propEx": {
+        "url": "PhotoPoems.state.fileUrl"
+      },
+      "events": {
+        "onChange": [
+          {
+            "store": "PhotoPoems",
+            "method": "fileChanged",
+            "payload": ""
+          }
+        ]
+      },
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "列表容器",
+      "path": "ridge-container/list",
+      "id": "h5hv2mkx06",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 265,
+        "height": 381
+      },
+      "styleEx": {},
+      "props": {
+        "dataSource": [],
+        "selected": [],
+        "children": [
+          "fhblq680ec"
+        ],
+        "gap": 2,
+        "padding": 8,
+        "layout": "list",
+        "fixedHeight": true,
+        "classNames": [
+          "ridge-bootstrap/bg-body-tertiary"
+        ],
+        "itemClassNames": [],
+        "selectedClassNames": []
+      },
+      "propEx": {
+        "dataSource": "PhotoPoems.state.colorList"
+      },
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "弹性容器",
+      "path": "ridge-container/flex",
+      "id": "d18pen8t7e",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 35,
+        "y": 75,
+        "width": 777,
+        "height": 469
+      },
+      "styleEx": {},
+      "props": {
+        "direction": "column",
+        "justify": "center",
+        "alignItems": "stretch",
+        "flexWrap": false,
+        "fill": false,
+        "children": [
+          "z7na91idda",
+          "zui6hmh4cf"
+        ],
+        "gap": 8,
+        "padding": 8,
+        "classList": []
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "弹性容器_1",
+      "path": "ridge-container/flex",
+      "id": "z7na91idda",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 49
+      },
+      "styleEx": {},
+      "props": {
+        "direction": "row",
+        "justify": "flex-start",
+        "alignItems": "center",
+        "flexWrap": false,
+        "fill": false,
+        "children": [
+          "rscbfio64f",
+          "16jovrhhaa",
+          "h302jf81p3"
+        ],
+        "gap": 8,
+        "padding": 8,
+        "classList": []
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "图片_1",
+      "path": "ridge-bootstrap/image",
+      "id": "rscbfio64f",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 60,
+        "height": 33
+      },
+      "styleEx": {},
+      "props": {
+        "src": "composite:///cloud.svg",
+        "classList": []
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "文本",
+      "path": "ridge-semi/text",
+      "id": "16jovrhhaa",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 570,
+        "height": 22
+      },
+      "styleEx": {},
+      "props": {
+        "text": "提取照片中的中国色",
+        "size": "normal",
+        "copyable": false,
+        "ellipsis": false,
+        "type": "warning",
+        "link": "",
+        "classList": [
+          "ridge-bootstrap/fs-5"
+        ]
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "图片",
+      "path": "ridge-bootstrap/image",
+      "id": "b81sraxix6",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 466,
+        "height": 386,
+        "flex": "1"
+      },
+      "styleEx": {},
+      "props": {
+        "src": "",
+        "classList": [],
+        "objectFit": "object-fit-contain"
+      },
+      "propEx": {
+        "src": "PhotoPoems.state.fileUrl"
+      },
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "弹性容器_2",
+      "path": "ridge-container/flex",
+      "id": "zui6hmh4cf",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 156,
+        "y": 241,
+        "width": 761,
+        "height": 240,
+        "flex": "1"
+      },
+      "styleEx": {},
+      "props": {
+        "direction": "row",
+        "justify": "flex-start",
+        "alignItems": "stretch",
+        "flexWrap": false,
+        "fill": false,
+        "children": [
+          "b81sraxix6",
+          "h5hv2mkx06"
+        ],
+        "gap": 0,
+        "padding": 0,
+        "classList": [
+          "ridge-bootstrap/border-primary-emphasis",
+          "ridge-bootstrap/border-1",
+          "ridge-bootstrap/border"
+        ]
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "弹性容器_3",
+      "path": "ridge-container/flex",
+      "id": "fhblq680ec",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 247,
+        "height": 32
+      },
+      "styleEx": {},
+      "props": {
+        "direction": "row",
+        "justify": "flex-start",
+        "alignItems": "center",
+        "flexWrap": false,
+        "fill": false,
+        "children": [
+          "p0zcyidihh",
+          "etn7c7um4c"
+        ],
+        "gap": 8,
+        "padding": 3,
+        "classList": []
+      },
+      "propEx": {},
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "头像",
+      "path": "ridge-semi/avatar",
+      "id": "p0zcyidihh",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 28,
+        "height": 28
+      },
+      "styleEx": {},
+      "props": {
+        "shape": "circle",
+        "src": "",
+        "color": "blue",
+        "borderColor": "grey",
+        "contentMotion": false,
+        "topLabel": "",
+        "bottomPlus": false,
+        "size": "extra-small"
+      },
+      "propEx": {
+        "color": "PhotoPoems.computed.tagColorValue"
+      },
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    },
+    {
+      "title": "文本_1",
+      "path": "ridge-semi/text",
+      "id": "etn7c7um4c",
+      "style": {
+        "position": "absolute",
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "width": 193,
+        "height": 26
+      },
+      "styleEx": {},
+      "props": {
+        "text": "文本",
+        "size": "normal",
+        "copyable": false,
+        "ellipsis": false,
+        "type": "primary",
+        "link": "",
+        "classList": []
+      },
+      "propEx": {
+        "text": "PhotoPoems.computed.tagColorName"
+      },
+      "events": {},
+      "visible": true,
+      "locked": false,
+      "full": false,
+      "$id": "https://ridge-ui.com/schemas/element",
+      "slots": []
+    }
+  ],
+  "name": "index",
+  "children": [
+    "d18pen8t7e"
+  ]
+}

@@ -3,7 +3,6 @@ export default {
   name: 'list-container',
   component: ListContainer,
   title: '列表容器',
-  // description: '适用于对列表项内容进行展示的场合，例如商品列表、文件列表等。 对于循环展示的内容，需要提供一个单独的列表项模板，每个项目按模板的内容进行展示',
   icon: 'icons/list.svg',
   type: 'vanilla',
   props: [{
@@ -43,13 +42,16 @@ export default {
     type: 'string',
     control: 'select',
     options: [{
-      label: '竖行',
+      label: '纵向排列',
       value: 'list'
     }, {
-      label: '横排/换行',
+      label: '单行排列',
+      value: 'line'
+    }, {
+      label: '多行排列',
       value: 'flex'
     }, {
-      label: '格子',
+      label: '栅格排列',
       value: 'grid'
     }],
     value: 'list'
@@ -57,6 +59,12 @@ export default {
     name: 'fixedHeight',
     label: '固定高度',
     hidden: ({ props }) => props && props.layout !== 'list',
+    type: 'boolean',
+    value: true
+  }, {
+    name: 'fixedWidth',
+    label: '固定宽度',
+    hidden: ({ props }) => props && props.layout !== 'line',
     type: 'boolean',
     value: true
   }, {
@@ -70,13 +78,13 @@ export default {
     hidden: ({ props }) => props && props.layout !== 'grid',
     label: '列数',
     type: 'number',
-    value: 2
+    value: 3
   }, {
     name: 'rows',
     hidden: ({ props }) => props && props.layout !== 'grid',
     label: '行数',
     type: 'number',
-    value: 5
+    value: 3
   }, {
     name: 'classNames',
     label: '整体样式',

@@ -21,6 +21,7 @@ export default ({
     if (mdfile) {
       dataURLToString(mdfile).then(text => {
         ref.current.innerHTML = window.marked.parse(text)
+        ref.current.scrollTop = 0
       })
     }
   })

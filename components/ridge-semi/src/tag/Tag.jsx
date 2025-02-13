@@ -7,16 +7,33 @@ export default ({
   size,
   color,
   type,
+  customColor,
   shape,
   onClick,
   onClose
 }) => {
+  const config = {
+    shape,
+    size,
+    color,
+    type
+  }
+  if (customColor) {
+    if (type === 'ghost') {
+      config.style = {
+        color: customColor,
+        borderColor: customColor
+      }
+    }
+    if (type === 'solid') {
+      config.style = {
+        background: customColor
+      }
+    }
+  }
   return (
     <Tag
-      shape={shape}
-      size={size}
-      color={color}
-      type={type}
+      {...config}
       onClick={() => {
         onClick && onClick()
       }}

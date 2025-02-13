@@ -15,22 +15,24 @@ export default ({
             <button className='btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed' data-bs-toggle='collapse' data-bs-target={'#colla-' + index} aria-expanded='true'>
               {item.label}
             </button>
-            <div className='collapse show' id={'colla-' + index}>
-              <ul className='btn-toggle-nav list-unstyled fw-normal pb-1 small'>
-                {item.children && item.children.map((subitem, subIndex) => {
-                  return (
-                    <li key={subIndex}><a
-                      onClick={() => {
-                        onChange && onChange(subitem.value)
-                        input && input(subitem.value)
-                      }} className={'link-body-emphasis d-inline-flex text-decoration-none rounded ' + (subitem.value === value ? 'fw-medium' : '')}
-                                       >{subitem.label}
-                    </a>
-                    </li>
-                  )
-                })}
-              </ul>
-            </div>
+            {item.children &&
+              <div className='collapse show' id={'colla-' + index}>
+                <ul className='btn-toggle-nav list-unstyled fw-normal pb-1 small'>
+                  {item.children.map((subitem, subIndex) => {
+                    return (
+                      <li key={subIndex}>
+                        <a
+                          onClick={() => {
+                            onChange && onChange(subitem.value)
+                            input && input(subitem.value)
+                          }} className={'link-body-emphasis d-inline-flex text-decoration-none rounded ' + (subitem.value === value ? 'fw-medium' : '')}
+                        >{subitem.label}
+                        </a>
+                      </li>
+                    )
+                  })}
+                </ul>
+              </div>}
           </li>
         )
       })}

@@ -198,6 +198,28 @@ const optionConfig = (name = 'options', label = '选项列表', value = [{
   }
 }
 
+const objectFit = {
+  label: '适应',
+  name: 'objectFit',
+  type: 'string',
+  control: 'select',
+  optionList: [{
+    label: '填充',
+    value: 'object-fit-fill'
+  }, {
+    label: '适应',
+    value: 'object-fit-contain'
+  }, {
+    label: '拉伸',
+    value: 'object-fit-cover'
+  }, {
+    label: '原始',
+    value: 'object-fit-none'
+  }, {
+    label: '重复',
+    value: 'object-fit-repeat'
+  }]
+}
 const json = (name = 'json', label = '对象', value = {}, connect = false) => {
   return {
     name,
@@ -205,6 +227,16 @@ const json = (name = 'json', label = '对象', value = {}, connect = false) => {
     value,
     connect,
     type: 'object'
+  }
+}
+
+const file = (name = 'file', label = '文件', value = '', connect = true) => {
+  return {
+    name,
+    label,
+    value,
+    connect,
+    type: 'file'
   }
 }
 
@@ -217,4 +249,4 @@ const array = (name = 'array', label = '数组', value = []) => {
   }
 }
 
-export { boolean, image, number, value, string, json, select, array, icon, color, children, classList, radiogroup, optionConfig, slot, onClick, onChange, event }
+export { boolean, image, number, value, string, file, json, select, array, icon, color, children, classList, radiogroup, optionConfig, slot, onClick, onChange, event, objectFit }

@@ -79,6 +79,10 @@ export default ({
     return (
       <Modal
         {...modalProperties}
+        bodyStyle={{
+          padding: 0,
+          marginBottom: showFooter ? 0 : 16
+        }}
         closeOnEsc={false}
         visible={value}
         mask={mask}

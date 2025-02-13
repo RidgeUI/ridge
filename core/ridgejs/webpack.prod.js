@@ -4,11 +4,6 @@ const path = require('path')
 
 module.exports = merge(config, {
   mode: 'production',
-  output: {
-    filename: '[name].min.js',
-    path: path.resolve(__dirname, 'build'),
-    clean: true
-  },
   devtool: false,
   optimization: {
     minimize: true,

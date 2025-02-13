@@ -16,6 +16,7 @@ export default {
     size2,
     boolean('required', '必填', false),
     boolean('readonly', '只读', false),
+    boolean('autoFocus', '自动聚焦', false),
     boolean('error', '错误', false)
   ],
   events: [onChange]
