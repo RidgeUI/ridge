@@ -1,0 +1,33 @@
+{
+  "name": "ridge-json-tree",
+  "version": "1.0.0",
+  "icon": "icons/animate.svg",
+  "description": "JSON Tree",
+  "author": {
+    "name": "Ridge System"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "build": "ridge",
+    "watch": "ridge -w -s",
+    "help": "ridge --help",
+    "pd": "npm publish --tag dev"
+  },
+  "files": [
+    "icons",
+    "build"
+  ],
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-json-tree": "^0.20.0"
+  },
+  "devDependencies": {
+    "ridge-build": "^1.1.0"
+  },
+  "externals": [
+    "/animate.css/animate.min.css"
+  ],
+  "ridgeDist": "build/ridge.dist.js"
+}

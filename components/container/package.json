@@ -1,0 +1,23 @@
+{
+  "name": "ridge-container",
+  "version": "1.2.0",
+  "logo": "icons/DuoIconsBox2.svg",
+  "description": "RidgeUI容器组件",
+  "main": "index.js",
+  "icon": "icons/free.svg",
+  "scripts": {
+    "build": "ridge",
+    "watch": "ridge -w -s -c",
+    "help": "ridge --help",
+    "bs": "ridge -s"
+  },
+  "files": [
+    "build",
+    "icons"
+  ],
+  "author": "Ridge System",
+  "cover": "icons/cover.png",
+  "license": "MIT",
+  "dependencies": {},
+  "ridgeDist": "build/ridge.dist.js"
+}

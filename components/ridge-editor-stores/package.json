@@ -1,0 +1,21 @@
+{
+  "name": "ridge-editor-stores",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "ridge",
+    "watch": "ridge -w -s",
+    "help": "ridge --help",
+    "pd": "npm publish --tag dev"
+  },
+  "files": [
+    "stores"
+  ],
+  "ridgeStores": [
+    "stores/appConfig.js",
+    "stores/loginModal.js",
+    "stores/userPanel.js"
+  ],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
